@@ -1,0 +1,356 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+$background_color: #333;
+$green: #5cb85c;
+$red: #d9534f;
+
+body {
+  padding: 0 10vw;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $background_color;
+    padding: 0 2vw;
+    color: white;
+    height: 70px;
+    .logo {
+      font-size: 2rem;
+      cursor: pointer;
+      .logo_link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .sign_up_sign_in {
+      display: flex;
+      gap: 1vw;
+      .link {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  .login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    .login {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+      border: 1px $background_color solid;
+      padding: 2rem 5rem;
+      border-radius: 2rem;
+      .formik {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+        .formik_input {
+          height: 2rem;
+          width: 20rem;
+          border: 2px solid $background_color;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+        }
+        .password_container {
+          width: 20rem;
+          display: flex;
+          .formik_input {
+            height: 2rem;
+            width: 85%;
+            border: 2px solid $background_color;
+            border-radius: 0.5rem;
+            padding: 0 1rem;
+          }
+          .show_hide_holder {
+            width: 15%;
+
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            .btn-holder {
+              cursor: pointer;
+              padding: 3px;
+              width: 2rem;
+              height: 2rem;
+              background: #e2e2e2;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+        .formik_submit {
+          cursor: pointer;
+          height: 2rem;
+          width: 20rem;
+          border: none;
+          color: white;
+          background: $green;
+          border-radius: 0.5rem;
+        }
+      }
+      .login_error {
+        height: 2rem;
+        width: 20rem;
+        text-align: center;
+        border: 2px solid $red;
+        border-radius: 0.5rem;
+        color: $red;
+      }
+      @media screen and (max-width: 900px) {
+        width: 350px;
+      }
+    }
+  }
+  .signup_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    .signup {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+      border: 1px $background_color solid;
+      padding: 2rem 5rem;
+      border-radius: 2rem;
+      .formik {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+        .formik_input {
+          height: 2rem;
+          width: 20rem;
+          border: 2px solid $background_color;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+        }
+        .password_container {
+          width: 20rem;
+          display: flex;
+          .formik_input {
+            height: 2rem;
+            width: 85%;
+            border: 2px solid $background_color;
+            border-radius: 0.5rem;
+            padding: 0 1rem;
+          }
+          .show_hide_holder {
+            width: 15%;
+
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            .btn-holder {
+              cursor: pointer;
+              padding: 3px;
+              width: 2rem;
+              height: 2rem;
+              background: #e2e2e2;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+        .matching_error {
+          color: $red;
+        }
+        .formik_submit {
+          cursor: pointer;
+          height: 2rem;
+          width: 20rem;
+          border: none;
+          color: white;
+          background: $green;
+          border-radius: 0.5rem;
+        }
+      }
+      .login_error {
+        height: 2rem;
+        width: 20rem;
+        text-align: center;
+        border: 2px solid $red;
+        border-radius: 0.5rem;
+        color: $red;
+      }
+      @media screen and (max-width: 900px) {
+        width: 350px;
+      }
+    }
+  }
+  .home_1 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    .todos_container {
+      .single_todo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        height: 5rem;
+        margin: 20px 0;
+        padding: 0 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+          0 6px 6px rgba(0, 0, 0, 0.23);
+        .todo_action_holder {
+          display: flex;
+          gap: 2rem;
+          .btn-holder {
+            cursor: pointer;
+            padding: 3px;
+            width: 2rem;
+            height: 2rem;
+            background: #e2e2e2;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .todo_adder_container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 5rem 0;
+      flex-direction: column;
+      .formik {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+        .formik_input {
+          height: 2rem;
+          width: 20rem;
+          border: 2px solid $background_color;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+        }
+        .length_error {
+          color: $red;
+        }
+        .formik_submit {
+          cursor: pointer;
+          height: 2rem;
+          width: 20rem;
+          border: none;
+          color: white;
+          background: $green;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+  .home_2 {
+    display: none;
+    width: 100%;
+
+    .tab {
+      width: 100%;
+      .tab_header {
+        display: grid;
+        width: 100%;
+        height: 60px;
+
+        grid-template-columns: 1fr 1fr;
+        .tab_holder {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .tab_item {
+            cursor: pointer;
+          }
+        }
+      }
+      .tab_body {
+        .todo_adder_container {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          padding: 5rem 0;
+          flex-direction: column;
+
+          .formik {
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+            .formik_input {
+              height: 2rem;
+              width: 20rem;
+              border: 2px solid $background_color;
+              border-radius: 0.5rem;
+              padding: 0 1rem;
+            }
+            .length_error {
+              color: $red;
+            }
+            .formik_submit {
+              cursor: pointer;
+              height: 2rem;
+              width: 20rem;
+              border: none;
+              color: white;
+              background: $green;
+              border-radius: 0.5rem;
+            }
+          }
+        }
+        .todos_container {
+          .single_todo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            height: 5rem;
+            margin: 20px 0;
+            padding: 0 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+              0 6px 6px rgba(0, 0, 0, 0.23);
+            .todo_action_holder {
+              display: flex;
+              gap: 2rem;
+              .btn-holder {
+                cursor: pointer;
+                padding: 3px;
+                width: 2rem;
+                height: 2rem;
+                background: #e2e2e2;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+            @media screen and (max-width: 900px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      display: flex;
+    }
+  }
+}
