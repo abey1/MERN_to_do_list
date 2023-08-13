@@ -15,7 +15,7 @@ const create = async (req, res) => {
 };
 
 const getTodos = async (req, res) => {
-  const { _id } = req.user._id;
+  const { _id } = req.user;
   try {
     const todos = await TodoModel.find({ user_id: _id });
     res.status(200).json(todos);
@@ -57,4 +57,24 @@ const getSingle = async (req, res) => {
   }
 };
 
-module.exports = { create, getTodos, updateTodo, deleteTodo, getSingle };
+const deleteAll = (req, res) => {
+  const { todos } = req.body;
+  console.log(req.body);
+  try {
+    const result = todos.map(async (todo, index) => {
+      return await TodoModel.findOneAndDelete({ _id: todo.id });
+    });
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  create,
+  getTodos,
+  updateTodo,
+  deleteTodo,
+  getSingle,
+  deleteAll,
+};

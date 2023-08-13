@@ -5,6 +5,7 @@ const UserModel = require("../models/userModel");
 const checkAuth = async (req, res, next) => {
   //get the authentication from request header
   const { authorization } = req.headers;
+  console.log(authorization);
   // check if authentication exists if not return authorization required error
   if (!authorization) {
     return res.status(401).json({ error: "Authorization token required" });
@@ -18,7 +19,7 @@ const checkAuth = async (req, res, next) => {
     const { _id } = jwt.verify(token, process.env.SECRET);
 
     // find the user from the database with the id _id
-    const user = await UserModel.findOne({ _id });
+    const user = await UserModel.findOne({ _id }).select("_id");
 
     //check if the user exists
     if (!user) {
@@ -32,6 +33,7 @@ const checkAuth = async (req, res, next) => {
     // go to the next routes
     next();
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: "request is not authorized" });
   }
 };
